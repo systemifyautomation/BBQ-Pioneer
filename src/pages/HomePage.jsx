@@ -1,4 +1,5 @@
 import SEO from "../components/SEO";
+import OrganizationSchema from "../components/OrganizationSchema";
 import Hero from "../components/Hero";
 import TrustBadges from "../components/TrustBadges";
 import FeaturedProducts from "../components/FeaturedProducts";
@@ -35,6 +36,7 @@ export default function HomePage() {
         type="website"
         structuredData={homeStructuredData}
       />
+      <OrganizationSchema />
       <main id="main-content">
         <Hero />
         <TrustBadges />

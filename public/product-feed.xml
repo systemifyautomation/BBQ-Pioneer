@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>BBQ Pioneer Product Feed</title>
+    <link>https://bbqpioneer.com</link>
+    <description>Premium grills and smokers from BBQ Pioneer</description>
+    
+    <item>
+      <g:id>BP-TPS-1000</g:id>
+      <g:title>Titan Pro Offset Smoker 1000</g:title>
+      <g:description>The Titan Pro Offset Smoker 1000 is the crown jewel of competition BBQ. Hand-welded from 1/4-inch steel, this 1,000-square-inch cooking behemoth delivers legendary low-and-slow results. Favored by World Championship Pitmasters for its unmatched heat retention and precision airflow control.</g:description>
+      <g:link>https://bbqpioneer.com/product/titan-pro-offset-smoker-1000</g:link>
+      <g:image_link>https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&amp;q=80</g:image_link>
+      <g:additional_image_link>https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&amp;q=80</g:additional_image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>3499 USD</g:price>
+      <g:sale_price>3499 USD</g:sale_price>
+      <g:brand>BBQ Pioneer</g:brand>
+      <g:gtin>850012345001</g:gtin>
+      <g:mpn>BP-TPS-1000</g:mpn>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Home &amp; Garden &gt; Kitchen &amp; Dining &gt; Outdoor Grills &amp; Griddles</g:google_product_category>
+      <g:product_type>Home &amp; Garden &gt; Grills &gt; Offset Smokers</g:product_type>
+      <g:shipping_weight>480 lbs</g:shipping_weight>
+      <g:item_group_id>offset-smokers</g:item_group_id>
+      <g:shipping>
+        <g:country>US</g:country>
+        <g:service>Standard</g:service>
+        <g:price>0 USD</g:price>
+      </g:shipping>
+    </item>
+
+    <item>
+      <g:id>BP-IKX-001</g:id>
+      <g:title>Inferno Kamado XL</g:title>
+      <g:description>The Inferno Kamado XL reimagines ceramic cooking for the modern pitmaster. Its aerospace-grade ceramic body retains heat with surgical precision — hit 225°F for 18-hour slow smokes or blast to 750°F for restaurant-quality sears. Versatility meets perfection.</g:description>
+      <g:link>https://bbqpioneer.com/product/inferno-kamado-xl</g:link>
+      <g:image_link>https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&amp;q=80</g:image_link>
+      <g:additional_image_link>https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&amp;q=80</g:additional_image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>2199 USD</g:price>
+      <g:sale_price>2199 USD</g:sale_price>
+      <g:brand>BBQ Pioneer</g:brand>
+      <g:gtin>850012345002</g:gtin>
+      <g:mpn>BP-IKX-001</g:mpn>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Home &amp; Garden &gt; Kitchen &amp; Dining &gt; Outdoor Grills &amp; Griddles</g:google_product_category>
+      <g:product_type>Home &amp; Garden &gt; Grills &gt; Kamado Grills</g:product_type>
+      <g:shipping_weight>219 lbs</g:shipping_weight>
+      <g:item_group_id>kamado-grills</g:item_group_id>
+      <g:shipping>
+        <g:country>US</g:country>
+        <g:service>Standard</g:service>
+        <g:price>0 USD</g:price>
+      </g:shipping>
+    </item>
+
+    <item>
+      <g:id>BP-PPP-1200</g:id>
+      <g:title>Pioneer Pellet Pro 1200</g:title>
+      <g:description>Set it. Forget it. Dominate. The Pioneer Pellet Pro 1200 brings WiFi-enabled precision to your backyard. Control your cook from anywhere via the BBQ Pioneer app. With 1,200 square inches of cooking space and a 30-lb hopper, this beast handles the longest overnight brisket sessions without breaking a sweat.</g:description>
+      <g:link>https://bbqpioneer.com/product/pioneer-pellet-pro-1200</g:link>
+      <g:image_link>https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&amp;q=80</g:image_link>
+      <g:additional_image_link>https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&amp;q=80</g:additional_image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>1899 USD</g:price>
+      <g:sale_price>1899 USD</g:sale_price>
+      <g:brand>BBQ Pioneer</g:brand>
+      <g:gtin>850012345003</g:gtin>
+      <g:mpn>BP-PPP-1200</g:mpn>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Home &amp; Garden &gt; Kitchen &amp; Dining &gt; Outdoor Grills &amp; Griddles</g:google_product_category>
+      <g:product_type>Home &amp; Garden &gt; Grills &gt; Pellet Grills</g:product_type>
+      <g:shipping_weight>197 lbs</g:shipping_weight>
+      <g:item_group_id>pellet-grills</g:item_group_id>
+      <g:shipping>
+        <g:country>US</g:country>
+        <g:service>Standard</g:service>
+        <g:price>0 USD</g:price>
+      </g:shipping>
+    </item>
+
+    <item>
+      <g:id>BP-BGG-6000</g:id>
+      <g:title>Blacksmith Gas Grill 6000</g:title>
+      <g:description>When only the absolute best will do, there's the Blacksmith Gas Grill 6000. Six commercial-grade burners output 60,000 BTUs of pure fire power. All 304 stainless steel construction that's built to weather decades. This is the grill that separates the serious from the casual.</g:description>
+      <g:link>https://bbqpioneer.com/product/blacksmith-gas-grill-6000</g:link>
+      <g:image_link>https://images.unsplash.com/photo-1512054502232-10a0a035d672?w=800&amp;q=80</g:image_link>
+      <g:additional_image_link>https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&amp;q=80</g:additional_image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>4299 USD</g:price>
+      <g:sale_price>4299 USD</g:sale_price>
+      <g:brand>BBQ Pioneer</g:brand>
+      <g:gtin>850012345004</g:gtin>
+      <g:mpn>BP-BGG-6000</g:mpn>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Home &amp; Garden &gt; Kitchen &amp; Dining &gt; Outdoor Grills &amp; Griddles</g:google_product_category>
+      <g:product_type>Home &amp; Garden &gt; Grills &gt; Gas Grills</g:product_type>
+      <g:shipping_weight>310 lbs</g:shipping_weight>
+      <g:item_group_id>gas-grills</g:item_group_id>
+      <g:shipping>
+        <g:country>US</g:country>
+        <g:service>Standard</g:service>
+        <g:price>0 USD</g:price>
+      </g:shipping>
+    </item>
+
+    <item>
+      <g:id>BP-EPG-001</g:id>
+      <g:title>Ember Portable Charcoal Grill</g:title>
+      <g:description>Premium portability meets uncompromising quality. The Ember Portable Charcoal Grill packs a serious punch in a tailgate-ready package. Built from 18-gauge stainless steel with folding legs and a lockable dome, it's the grill champions take on the road.</g:description>
+      <g:link>https://bbqpioneer.com/product/ember-portable-charcoal-grill</g:link>
+      <g:image_link>https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&amp;q=80</g:image_link>
+      <g:additional_image_link>https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&amp;q=80</g:additional_image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>649 USD</g:price>
+      <g:sale_price>649 USD</g:sale_price>
+      <g:brand>BBQ Pioneer</g:brand>
+      <g:gtin>850012345005</g:gtin>
+      <g:mpn>BP-EPG-001</g:mpn>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Home &amp; Garden &gt; Kitchen &amp; Dining &gt; Outdoor Grills &amp; Griddles</g:google_product_category>
+      <g:product_type>Home &amp; Garden &gt; Grills &gt; Charcoal Grills</g:product_type>
+      <g:shipping_weight>28 lbs</g:shipping_weight>
+      <g:item_group_id>charcoal-grills</g:item_group_id>
+      <g:shipping>
+        <g:country>US</g:country>
+        <g:service>Standard</g:service>
+        <g:price>0 USD</g:price>
+      </g:shipping>
+    </item>
+
+    <item>
+      <g:id>BP-VCK-XL</g:id>
+      <g:title>Vortex Charcoal Kettle XL</g:title>
+      <g:description>The classic evolved. The Vortex Charcoal Kettle XL takes the timeless kettle design and pushes it to its absolute limit with a 26-inch cooking grate, dual-zone Vortex technology for incredible high-heat searing, and premium porcelain enamel that never chips.</g:description>
+      <g:link>https://bbqpioneer.com/product/vortex-charcoal-kettle-xl</g:link>
+      <g:image_link>https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&amp;q=80</g:image_link>
+      <g:additional_image_link>https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&amp;q=80</g:additional_image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>899 USD</g:price>
+      <g:sale_price>899 USD</g:sale_price>
+      <g:brand>BBQ Pioneer</g:brand>
+      <g:gtin>850012345006</g:gtin>
+      <g:mpn>BP-VCK-XL</g:mpn>
+      <g:condition>new</g:condition>
+      <g:google_product_category>Home &amp; Garden &gt; Kitchen &amp; Dining &gt; Outdoor Grills &amp; Griddles</g:google_product_category>
+      <g:product_type>Home &amp; Garden &gt; Grills &gt; Charcoal Grills</g:product_type>
+      <g:shipping_weight>34 lbs</g:shipping_weight>
+      <g:item_group_id>charcoal-grills</g:item_group_id>
+      <g:shipping>
+        <g:country>US</g:country>
+        <g:service>Standard</g:service>
+        <g:price>0 USD</g:price>
+      </g:shipping>
+    </item>
+
+  </channel>
+</rss>

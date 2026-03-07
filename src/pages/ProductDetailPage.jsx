@@ -81,22 +81,55 @@ export default function ProductDetailPage() {
     "name": product.name,
     "description": product.description,
     "sku": product.sku,
+    "mpn": product.mpn,
+    "gtin": product.gtin,
     "brand": {
       "@type": "Brand",
       "name": product.brand,
     },
     "image": product.images,
+    "itemCondition": "https://schema.org/NewCondition",
     "offers": {
       "@type": "Offer",
       "url": `https://bbqpioneer.com/product/${product.slug}`,
       "priceCurrency": "USD",
       "price": product.price,
+      "priceValidUntil": "2026-12-31",
       "availability": product.inStock
         ? "https://schema.org/InStock"
         : "https://schema.org/OutOfStock",
+      "itemCondition": "https://schema.org/NewCondition",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 3,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 5,
+            "maxValue": 10,
+            "unitCode": "DAY"
+          }
+        }
+      },
       "seller": {
         "@type": "Organization",
         "name": "BBQ Pioneer",
+        "url": "https://bbqpioneer.com"
       },
     },
     "aggregateRating": {

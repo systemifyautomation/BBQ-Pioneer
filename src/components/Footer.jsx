@@ -8,6 +8,7 @@ import {
   FiPhone,
   FiMapPin,
 } from "react-icons/fi";
+import { contactInfo, getPhoneLink, getEmailLink, getShortAddress } from "../data/contactInfo";
 
 const footerLinks = {
   "Shop": [
@@ -18,10 +19,10 @@ const footerLinks = {
     { to: "/shop?category=Charcoal+Grill", label: "Charcoal Grills" },
   ],
   "Support": [
-    { to: "/about", label: "Our Story" },
+    { to: "/contact", label: "Contact Us" },
+    { to: "/shipping-policy", label: "Shipping Policy" },
+    { to: "/refund-policy", label: "Returns & Refunds" },
     { to: "/about#warranty", label: "Warranty Info" },
-    { to: "/about#shipping", label: "Shipping Policy" },
-    { to: "/about#returns", label: "Returns & Refunds" },
     { to: "/about#faq", label: "FAQ" },
   ],
   "Company": [
@@ -100,22 +101,22 @@ export default function Footer() {
             {/* Contact */}
             <div className="mt-6 space-y-2">
               <a
-                href="tel:+18888882473"
+                href={getPhoneLink()}
                 className="flex items-center gap-2 text-coal-400 hover:text-fire-500 transition-colors text-sm"
               >
                 <FiPhone size={14} />
-                1-888-BBQ-FIRE
+                {contactInfo.phone.display}
               </a>
               <a
-                href="mailto:hello@bbqpioneer.com"
+                href={getEmailLink('main')}
                 className="flex items-center gap-2 text-coal-400 hover:text-fire-500 transition-colors text-sm"
               >
                 <FiMail size={14} />
-                hello@bbqpioneer.com
+                {contactInfo.email.main}
               </a>
               <div className="flex items-center gap-2 text-coal-400 text-sm">
                 <FiMapPin size={14} />
-                Austin, Texas, USA
+                {getShortAddress()}
               </div>
             </div>
           </div>
@@ -150,14 +151,14 @@ export default function Footer() {
             © {new Date().getFullYear()} BBQ Pioneer LLC. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <Link to="/about#privacy" className="hover:text-coal-300 transition-colors">
+            <Link to="/privacy-policy" className="hover:text-coal-300 transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/about#terms" className="hover:text-coal-300 transition-colors">
+            <Link to="/terms-of-service" className="hover:text-coal-300 transition-colors">
               Terms of Service
             </Link>
-            <Link to="/about#sitemap" className="hover:text-coal-300 transition-colors">
-              Sitemap
+            <Link to="/contact" className="hover:text-coal-300 transition-colors">
+              Contact
             </Link>
           </div>
         </div>
