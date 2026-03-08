@@ -61,15 +61,15 @@ export default function AboutPage() {
           alt="BBQ Pioneer team"
           className="absolute inset-0 w-full h-full object-cover opacity-25"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-coal-900/80 to-coal-900" />
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900" />
         <div className="relative max-w-4xl mx-auto text-center px-4">
           <span className="text-fire-500 text-sm font-bold uppercase tracking-widest mb-4 block">
             Our Story
           </span>
-          <h1 className="font-display text-5xl md:text-7xl text-white tracking-wider mb-6">
+          <h1 className="font-display text-5xl md:text-7xl text-gray-900 tracking-wider mb-6">
             BORN FROM THE PIT
           </h1>
-          <p className="text-coal-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
             BBQ Pioneer was founded by championship pitmasters who were tired of choosing between
             quality and performance. We built what the market was missing — grills built for those
             who refuse to settle.
@@ -84,10 +84,10 @@ export default function AboutPage() {
             <span className="text-fire-500 text-sm font-bold uppercase tracking-widest block mb-4">
               Why We Exist
             </span>
-            <h2 className="font-display text-4xl md:text-5xl text-white tracking-wider mb-6">
+            <h2 className="font-display text-4xl md:text-5xl text-gray-900 tracking-wider mb-6">
               THE BEST BBQ<br />DESERVES THE BEST TOOLS
             </h2>
-            <div className="space-y-4 text-coal-300 text-base leading-relaxed">
+            <div className="space-y-4 text-gray-600 text-base leading-relaxed">
               <p>
                 In 2009, founder Jake Morrison won his first World Championship BBQ title using a
                 $300 backyard offset smoker with duct-taped seals and hand-drilled tuning plates.
@@ -110,7 +110,7 @@ export default function AboutPage() {
               alt="BBQ Pioneer grill in action"
               className="rounded-3xl w-full aspect-[4/3] object-cover"
             />
-            <div className="absolute -bottom-6 -right-6 bg-fire-600 rounded-2xl p-5 text-white text-center shadow-xl fire-glow">
+            <div className="absolute -bottom-6 -right-6 bg-fire-600 rounded-2xl p-5 text-gray-900 text-center shadow-xl fire-glow">
               <p className="font-display text-4xl tracking-wider">15+</p>
               <p className="text-xs font-semibold uppercase tracking-wide mt-1">Years<br />in Business</p>
             </div>
@@ -120,19 +120,19 @@ export default function AboutPage() {
         {/* Values */}
         <div className="mb-24">
           <div className="text-center mb-12">
-            <h2 className="font-display text-4xl text-white tracking-wider">OUR VALUES</h2>
+            <h2 className="font-display text-4xl text-gray-900 tracking-wider">OUR VALUES</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map(({ Icon, title, desc }) => (
               <div
                 key={title}
-                className="bg-coal-800 border border-coal-700 rounded-2xl p-6 hover:border-fire-600/50 transition-colors group"
+                className="bg-gray-100 border border-gray-300 rounded-2xl p-6 hover:border-fire-600/50 transition-colors group"
               >
                 <div className="w-12 h-12 rounded-xl bg-fire-600/10 flex items-center justify-center mb-4 group-hover:bg-fire-600/20 transition-colors">
                   <Icon size={22} className="text-fire-500" />
                 </div>
-                <h3 className="text-white font-bold text-lg mb-2">{title}</h3>
-                <p className="text-coal-400 text-sm leading-relaxed">{desc}</p>
+                <h3 className="text-gray-900 font-bold text-lg mb-2">{title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -144,20 +144,20 @@ export default function AboutPage() {
             <span className="text-fire-500 text-sm font-bold uppercase tracking-widest block mb-2">
               The People Behind the Flames
             </span>
-            <h2 className="font-display text-4xl text-white tracking-wider">MEET THE TEAM</h2>
+            <h2 className="font-display text-4xl text-gray-900 tracking-wider">MEET THE TEAM</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {team.map((member) => (
               <div
                 key={member.name}
-                className="bg-coal-800 border border-coal-700 rounded-2xl p-8 text-center hover:border-fire-600/50 transition-colors"
+                className="bg-gray-100 border border-gray-300 rounded-2xl p-8 text-center hover:border-fire-600/50 transition-colors"
               >
-                <div className="w-20 h-20 rounded-full fire-gradient flex items-center justify-center mx-auto mb-4 text-white font-display text-2xl tracking-wider">
+                <div className="w-20 h-20 rounded-full fire-gradient flex items-center justify-center mx-auto mb-4 text-gray-900 font-display text-2xl tracking-wider">
                   {member.initials}
                 </div>
-                <h3 className="text-white font-bold text-xl mb-1">{member.name}</h3>
+                <h3 className="text-gray-900 font-bold text-xl mb-1">{member.name}</h3>
                 <p className="text-fire-500 text-sm font-semibold mb-3">{member.title}</p>
-                <p className="text-coal-400 text-sm leading-relaxed">{member.bio}</p>
+                <p className="text-gray-500 text-sm leading-relaxed">{member.bio}</p>
               </div>
             ))}
           </div>

@@ -9,6 +9,7 @@ import {
   FiPhone,
 } from "react-icons/fi";
 import CartDrawer from "./CartDrawer";
+import { contactInfo, getPhoneLink } from "../data/contactInfo";
 
 const navLinks = [
   { to: "/shop", label: "Shop Grills" },
@@ -45,7 +46,7 @@ export default function Header() {
   return (
     <>
       {/* Announcement Bar */}
-      <div className="fire-gradient text-white text-center text-sm py-2 px-4 font-semibold tracking-wide">
+      <div className="fire-gradient text-gray-900 text-center text-sm py-2 px-4 font-semibold tracking-wide">
         🔥 FREE SHIPPING on orders over $500 + Lifetime Warranty on Select Models
       </div>
 
@@ -53,8 +54,8 @@ export default function Header() {
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-coal-900/95 backdrop-blur-md shadow-2xl border-b border-coal-700"
-            : "bg-coal-900"
+            ? "bg-white/95 backdrop-blur-md shadow-2xl border-b border-gray-200"
+            : "bg-white"
         }`}
         role="banner"
       >
@@ -68,7 +69,7 @@ export default function Header() {
             >
               <img src="/flame.svg" alt="" className="w-8 h-8" />
               <div>
-                <span className="font-display text-2xl lg:text-3xl text-white tracking-wider group-hover:text-fire-600 transition-colors">
+                <span className="font-display text-2xl lg:text-3xl text-gray-900 tracking-wider group-hover:text-fire-600 transition-colors">
                   BBQ PIONEER
                 </span>
               </div>
@@ -87,7 +88,7 @@ export default function Header() {
                     `text-sm font-semibold uppercase tracking-wider transition-colors ${
                       isActive
                         ? "text-fire-600"
-                        : "text-coal-200 hover:text-fire-500"
+                        : "text-gray-700 hover:text-fire-500"
                     }`
                   }
                 >
@@ -100,18 +101,18 @@ export default function Header() {
             <div className="flex items-center gap-3">
               {/* Phone */}
               <a
-                href="tel:+18888882473"
-                className="hidden xl:flex items-center gap-1.5 text-sm text-coal-300 hover:text-fire-500 transition-colors"
+                href={getPhoneLink()}
+                className="hidden xl:flex items-center gap-1.5 text-sm text-gray-600 hover:text-fire-500 transition-colors"
                 aria-label="Call us"
               >
                 <FiPhone size={15} />
-                <span className="font-medium">1-888-BBQ-FIRE</span>
+                <span className="font-medium">{contactInfo.phone.display}</span>
               </a>
 
               {/* Search */}
               <button
                 onClick={() => setSearchOpen(!searchOpen)}
-                className="p-2 text-coal-300 hover:text-fire-500 transition-colors"
+                className="p-2 text-gray-600 hover:text-fire-500 transition-colors"
                 aria-label="Search products"
               >
                 <FiSearch size={20} />
@@ -120,12 +121,12 @@ export default function Header() {
               {/* Cart */}
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="relative p-2 text-coal-300 hover:text-fire-500 transition-colors"
+                className="relative p-2 text-gray-600 hover:text-fire-500 transition-colors"
                 aria-label={`Shopping cart with ${totalItems} items`}
               >
                 <FiShoppingCart size={22} />
                 {totalItems > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-fire-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center pulse-fire">
+                  <span className="absolute -top-1 -right-1 bg-fire-600 text-gray-900 text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center pulse-fire">
                     {totalItems > 99 ? "99+" : totalItems}
                   </span>
                 )}
@@ -134,7 +135,7 @@ export default function Header() {
               {/* Mobile menu toggle */}
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="lg:hidden p-2 text-coal-300 hover:text-fire-500 transition-colors"
+                className="lg:hidden p-2 text-gray-600 hover:text-fire-500 transition-colors"
                 aria-label={mobileOpen ? "Close menu" : "Open menu"}
                 aria-expanded={mobileOpen}
               >
@@ -153,11 +154,11 @@ export default function Header() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search grills, smokers, brands..."
-                  className="flex-1 bg-coal-800 border border-coal-600 text-white placeholder-coal-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-fire-600 transition-colors"
+                  className="flex-1 bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-fire-600 transition-colors"
                 />
                 <button
                   type="submit"
-                  className="fire-gradient text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity"
+                  className="fire-gradient text-gray-900 px-5 py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity"
                 >
                   Search
                 </button>
@@ -168,7 +169,7 @@ export default function Header() {
 
         {/* Mobile Nav */}
         {mobileOpen && (
-          <div className="lg:hidden bg-coal-800 border-t border-coal-700">
+          <div className="lg:hidden bg-gray-50 border-t border-gray-200">
             <nav
               className="flex flex-col py-4"
               aria-label="Mobile navigation"
@@ -181,26 +182,26 @@ export default function Header() {
                   className={({ isActive }) =>
                     `px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-colors ${
                       isActive
-                        ? "text-fire-600 bg-coal-700"
-                        : "text-coal-200 hover:text-fire-500 hover:bg-coal-700"
+                        ? "text-fire-600 bg-gray-100"
+                        : "text-gray-700 hover:text-fire-500 hover:bg-gray-100"
                     }`
                   }
                 >
                   {link.label}
                 </NavLink>
               ))}
-              <div className="px-6 pt-4 border-t border-coal-700 mt-2">
+              <div className="px-6 pt-4 border-t border-gray-200 mt-2">
                 <form onSubmit={handleSearch} className="flex gap-2">
                   <input
                     type="search"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search products..."
-                    className="flex-1 bg-coal-700 border border-coal-600 text-white placeholder-coal-400 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-fire-600"
+                    className="flex-1 bg-gray-100 border border-gray-300 text-gray-900 placeholder-gray-400 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-fire-600"
                   />
                   <button
                     type="submit"
-                    className="fire-gradient text-white px-4 py-2 rounded-lg text-sm font-semibold"
+                    className="fire-gradient text-gray-900 px-4 py-2 rounded-lg text-sm font-semibold"
                   >
                     Go
                   </button>

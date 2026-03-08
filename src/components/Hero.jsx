@@ -14,8 +14,8 @@ export default function Hero() {
           alt="Premium BBQ grill with glowing embers"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-coal-900 via-coal-900/80 to-coal-900/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-coal-900/90 via-transparent to-coal-900/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-white/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-white/50" />
       </div>
 
       {/* Animated fire particles */}
@@ -35,7 +35,7 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-white tracking-wider leading-none mb-6">
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-gray-900 tracking-wider leading-none mb-6">
             MASTER THE{" "}
             <span className="fire-text fire-glow-text">FIRE.</span>
             <br />
@@ -43,7 +43,7 @@ export default function Hero() {
             <span className="fire-text">PIT.</span>
           </h1>
 
-          <p className="text-coal-200 text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
+          <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
             Premium grills and smokers engineered for those who refuse to
             compromise. Competition-grade craftsmanship. Legendary flavor.
             Delivered to your door.
@@ -63,14 +63,14 @@ export default function Hero() {
             </Link>
             <Link
               to="/product/titan-pro-offset-smoker-1000"
-              className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white/30 hover:border-fire-600 text-white font-bold px-8 py-4 rounded-xl text-base uppercase tracking-wider transition-all hover:bg-fire-600/10"
+              className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-gray-300 hover:border-fire-600 text-gray-900 font-bold px-8 py-4 rounded-xl text-base uppercase tracking-wider transition-all hover:bg-fire-600/10"
             >
               View Best Seller
             </Link>
           </div>
 
           {/* Trust signals */}
-          <div className="flex flex-wrap gap-6 text-sm text-coal-300">
+          <div className="flex flex-wrap gap-6 text-sm text-gray-600">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-fire-600/20 flex items-center justify-center">
                 <FiShield className="text-fire-500" size={14} />
@@ -94,7 +94,7 @@ export default function Hero() {
       </div>
 
       {/* Stats band */}
-      <div className="absolute bottom-0 left-0 right-0 bg-coal-900/80 backdrop-blur-sm border-t border-coal-700/50">
+      <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-gray-300/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             {[
@@ -107,7 +107,7 @@ export default function Hero() {
                 <p className="font-display text-2xl md:text-3xl text-fire-500 tracking-wide">
                   {stat.value}
                 </p>
-                <p className="text-coal-400 text-xs uppercase tracking-wider mt-0.5">
+                <p className="text-gray-500 text-xs uppercase tracking-wider mt-0.5">
                   {stat.label}
                 </p>
               </div>

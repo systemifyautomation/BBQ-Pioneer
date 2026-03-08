@@ -7,7 +7,7 @@ export default function FeaturedProducts() {
   const featured = products.slice(0, 3);
 
   return (
-    <section className="py-20 bg-coal-900" aria-label="Featured products">
+    <section className="py-20 bg-white" aria-label="Featured products">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
@@ -15,7 +15,7 @@ export default function FeaturedProducts() {
             <span className="text-fire-500 text-sm font-bold uppercase tracking-widest">
               Handpicked by Pitmasters
             </span>
-            <h2 className="font-display text-4xl md:text-5xl text-white tracking-wider mt-1">
+            <h2 className="font-display text-4xl md:text-5xl text-gray-900 tracking-wider mt-1">
               FEATURED GRILLS
             </h2>
           </div>

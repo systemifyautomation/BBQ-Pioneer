@@ -4,6 +4,7 @@ import { CartProvider } from "./context/CartContext";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import LiveChat from "./components/LiveChat";
 import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
@@ -20,13 +21,13 @@ function NotFoundPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-center px-4">
       <p className="font-display text-8xl text-fire-600 mb-4">404</p>
-      <p className="font-display text-4xl text-white tracking-wider mb-4">PAGE NOT FOUND</p>
-      <p className="text-coal-400 mb-8">
+      <p className="font-display text-4xl text-gray-900 tracking-wider mb-4">PAGE NOT FOUND</p>
+      <p className="text-gray-500 mb-8">
         The page you're looking for has gone up in smoke.
       </p>
       <a
         href="/"
-        className="fire-gradient text-white font-bold px-8 py-4 rounded-xl uppercase tracking-wider text-sm hover:opacity-90 transition-opacity"
+        className="fire-gradient text-gray-900 font-bold px-8 py-4 rounded-xl uppercase tracking-wider text-sm hover:opacity-90 transition-opacity"
       >
         Go Home
       </a>
@@ -42,7 +43,7 @@ export default function App() {
           <ScrollToTop />
           <a
             href="#main-content"
-            className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-fire-600 text-white px-4 py-2 rounded-lg z-[100] font-semibold"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-fire-600 text-gray-900 px-4 py-2 rounded-lg z-[100] font-semibold"
           >
             Skip to main content
           </a>
@@ -62,6 +63,7 @@ export default function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Footer />
+          <LiveChat />
         </BrowserRouter>
       </CartProvider>
     </HelmetProvider>

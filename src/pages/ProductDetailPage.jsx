@@ -20,9 +20,9 @@ import {
 function AccordionItem({ title, children }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-coal-700">
+    <div className="border-b border-gray-300">
       <button
-        className="w-full flex justify-between items-center py-4 text-left text-white font-semibold hover:text-fire-500 transition-colors"
+        className="w-full flex justify-between items-center py-4 text-left text-gray-900 font-semibold hover:text-fire-500 transition-colors"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
       >
@@ -30,7 +30,7 @@ function AccordionItem({ title, children }) {
         {open ? <FiChevronUp size={18} /> : <FiChevronDown size={18} />}
       </button>
       {open && (
-        <div className="pb-4 text-coal-300 text-sm leading-relaxed">
+        <div className="pb-4 text-gray-600 text-sm leading-relaxed">
           {children}
         </div>
       )}
@@ -50,12 +50,12 @@ export default function ProductDetailPage() {
   if (!product) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center px-4">
-        <p className="font-display text-5xl text-white tracking-wider mb-4">
+        <p className="font-display text-5xl text-gray-900 tracking-wider mb-4">
           PRODUCT NOT FOUND
         </p>
         <Link
           to="/shop"
-          className="fire-gradient text-white font-bold px-6 py-3 rounded-xl uppercase tracking-wide text-sm hover:opacity-90 transition-opacity"
+          className="fire-gradient text-gray-900 font-bold px-6 py-3 rounded-xl uppercase tracking-wide text-sm hover:opacity-90 transition-opacity"
         >
           Back to Shop
         </Link>
@@ -153,7 +153,7 @@ export default function ProductDetailPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-coal-400 mb-8" aria-label="Breadcrumb">
+        <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8" aria-label="Breadcrumb">
           <Link to="/" className="hover:text-fire-500 transition-colors">
             Home
           </Link>
@@ -169,13 +169,13 @@ export default function ProductDetailPage() {
             {product.category}
           </Link>
           <span>/</span>
-          <span className="text-coal-200 truncate">{product.name}</span>
+          <span className="text-gray-700 truncate">{product.name}</span>
         </nav>
 
         {/* Back button */}
         <button
           onClick={() => navigate(-1)}
-          className="flex items-center gap-2 text-coal-400 hover:text-fire-500 transition-colors text-sm mb-6 group"
+          className="flex items-center gap-2 text-gray-500 hover:text-fire-500 transition-colors text-sm mb-6 group"
         >
           <FiArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
           Back
@@ -185,14 +185,14 @@ export default function ProductDetailPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Images */}
           <div>
-            <div className="relative rounded-2xl overflow-hidden bg-coal-700 mb-4 aspect-[4/3]">
+            <div className="relative rounded-2xl overflow-hidden bg-gray-200 mb-4 aspect-[4/3]">
               <img
                 src={product.images[activeImg]}
                 alt={`${product.name} - view ${activeImg + 1}`}
                 className="w-full h-full object-cover"
               />
               {discount > 0 && (
-                <div className="absolute top-4 left-4 bg-fire-600 text-white font-bold px-3 py-1.5 rounded-full text-sm">
+                <div className="absolute top-4 left-4 bg-fire-600 text-gray-900 font-bold px-3 py-1.5 rounded-full text-sm">
                   -{discount}%
                 </div>
               )}
@@ -207,7 +207,7 @@ export default function ProductDetailPage() {
                     className={`w-20 h-16 rounded-xl overflow-hidden border-2 transition-all ${
                       i === activeImg
                         ? "border-fire-600"
-                        : "border-coal-600 hover:border-coal-400"
+                        : "border-gray-400 hover:border-gray-400"
                     }`}
                     aria-label={`View image ${i + 1}`}
                   >
@@ -230,13 +230,13 @@ export default function ProductDetailPage() {
                 {product.category}
               </span>
               {product.badge && (
-                <span className="bg-fire-600 text-white text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide">
+                <span className="bg-fire-600 text-gray-900 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide">
                   {product.badge}
                 </span>
               )}
             </div>
 
-            <h1 className="font-display text-4xl md:text-5xl text-white tracking-wide leading-tight mb-4">
+            <h1 className="font-display text-4xl md:text-5xl text-gray-900 tracking-wide leading-tight mb-4">
               {product.name.toUpperCase()}
             </h1>
 
@@ -247,12 +247,12 @@ export default function ProductDetailPage() {
 
             {/* Price */}
             <div className="flex items-baseline gap-4 mb-6">
-              <span className="text-4xl font-extrabold text-white">
+              <span className="text-4xl font-extrabold text-gray-900">
                 ${product.price.toLocaleString()}
               </span>
               {product.originalPrice && (
                 <>
-                  <span className="text-xl text-coal-500 line-through">
+                  <span className="text-xl text-gray-400 line-through">
                     ${product.originalPrice.toLocaleString()}
                   </span>
                   <span className="text-fire-500 font-bold text-lg">
@@ -263,7 +263,7 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Description */}
-            <p className="text-coal-300 text-base leading-relaxed mb-6">
+            <p className="text-gray-600 text-base leading-relaxed mb-6">
               {product.description}
             </p>
 
@@ -280,18 +280,18 @@ export default function ProductDetailPage() {
             {/* Qty + Add to cart */}
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
               {/* Qty selector */}
-              <div className="flex items-center bg-coal-700 rounded-xl border border-coal-600">
+              <div className="flex items-center bg-gray-200 rounded-xl border border-gray-400">
                 <button
                   onClick={() => setQty(Math.max(1, qty - 1))}
-                  className="w-12 h-12 flex items-center justify-center text-white hover:text-fire-500 transition-colors"
+                  className="w-12 h-12 flex items-center justify-center text-gray-900 hover:text-fire-500 transition-colors"
                   aria-label="Decrease quantity"
                 >
                   −
                 </button>
-                <span className="w-10 text-center text-white font-bold">{qty}</span>
+                <span className="w-10 text-center text-gray-900 font-bold">{qty}</span>
                 <button
                   onClick={() => setQty(qty + 1)}
-                  className="w-12 h-12 flex items-center justify-center text-white hover:text-fire-500 transition-colors"
+                  className="w-12 h-12 flex items-center justify-center text-gray-900 hover:text-fire-500 transition-colors"
                   aria-label="Increase quantity"
                 >
                   +
@@ -303,8 +303,8 @@ export default function ProductDetailPage() {
                 disabled={!product.inStock}
                 className={`flex-1 flex items-center justify-center gap-2 font-bold py-3.5 px-6 rounded-xl text-sm uppercase tracking-wider transition-all ${
                   added
-                    ? "bg-emerald-500 text-white"
-                    : "fire-gradient text-white hover:opacity-90 fire-glow"
+                    ? "bg-emerald-500 text-gray-900"
+                    : "fire-gradient text-gray-900 hover:opacity-90 fire-glow"
                 } disabled:opacity-50 disabled:cursor-not-allowed`}
               >
                 {added ? (
@@ -321,13 +321,13 @@ export default function ProductDetailPage() {
               </button>
 
               <button
-                className="w-12 h-12 flex items-center justify-center rounded-xl border border-coal-600 hover:border-fire-600 text-coal-400 hover:text-fire-500 transition-all"
+                className="w-12 h-12 flex items-center justify-center rounded-xl border border-gray-400 hover:border-fire-600 text-gray-500 hover:text-fire-500 transition-all"
                 aria-label="Add to wishlist"
               >
                 <FiHeart size={18} />
               </button>
               <button
-                className="w-12 h-12 flex items-center justify-center rounded-xl border border-coal-600 hover:border-fire-600 text-coal-400 hover:text-fire-500 transition-all"
+                className="w-12 h-12 flex items-center justify-center rounded-xl border border-gray-400 hover:border-fire-600 text-gray-500 hover:text-fire-500 transition-all"
                 aria-label="Share product"
               >
                 <FiShare2 size={18} />
@@ -335,16 +335,16 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Delivery/trust micro-info */}
-            <div className="space-y-2.5 pt-4 border-t border-coal-700">
-              <div className="flex items-center gap-3 text-sm text-coal-300">
+            <div className="space-y-2.5 pt-4 border-t border-gray-300">
+              <div className="flex items-center gap-3 text-sm text-gray-600">
                 <FiTruck size={16} className="text-fire-500 flex-shrink-0" />
                 <span>Free shipping on this order (over $500)</span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-coal-300">
+              <div className="flex items-center gap-3 text-sm text-gray-600">
                 <FiShield size={16} className="text-fire-500 flex-shrink-0" />
                 <span>Lifetime warranty on firebox and frame</span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-coal-300">
+              <div className="flex items-center gap-3 text-sm text-gray-600">
                 <FiCheck size={16} className="text-fire-500 flex-shrink-0" />
                 <span>30-day hassle-free return policy</span>
               </div>
@@ -355,12 +355,12 @@ export default function ProductDetailPage() {
         {/* Accordions */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div>
-            <h2 className="font-display text-2xl text-white tracking-wider mb-4">
+            <h2 className="font-display text-2xl text-gray-900 tracking-wider mb-4">
               KEY FEATURES
             </h2>
             <ul className="space-y-2">
               {product.features.map((f, i) => (
-                <li key={i} className="flex items-start gap-3 text-coal-300 text-sm">
+                <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
                   <FiCheck size={16} className="text-fire-500 flex-shrink-0 mt-0.5" />
                   {f}
                 </li>
@@ -368,17 +368,17 @@ export default function ProductDetailPage() {
             </ul>
           </div>
           <div>
-            <h2 className="font-display text-2xl text-white tracking-wider mb-4">
+            <h2 className="font-display text-2xl text-gray-900 tracking-wider mb-4">
               SPECIFICATIONS
             </h2>
             <dl className="space-y-2">
               {Object.entries(product.specs).map(([k, v]) => (
                 <div
                   key={k}
-                  className="flex justify-between text-sm py-2 border-b border-coal-700"
+                  className="flex justify-between text-sm py-2 border-b border-gray-300"
                 >
-                  <dt className="text-coal-400 font-medium">{k}</dt>
-                  <dd className="text-white font-semibold text-right">{v}</dd>
+                  <dt className="text-gray-500 font-medium">{k}</dt>
+                  <dd className="text-gray-900 font-semibold text-right">{v}</dd>
                 </div>
               ))}
             </dl>
@@ -388,7 +388,7 @@ export default function ProductDetailPage() {
         {/* Related Products */}
         {related.length > 0 && (
           <div>
-            <h2 className="font-display text-3xl text-white tracking-wider mb-8">
+            <h2 className="font-display text-3xl text-gray-900 tracking-wider mb-8">
               YOU MAY ALSO LIKE
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

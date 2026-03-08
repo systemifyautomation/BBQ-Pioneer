@@ -58,7 +58,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-coal-950 text-coal-200">
+    <div className="min-h-screen bg-gray-50 text-gray-700">
       <SEO
         title="Contact Us"
         description="Get in touch with BBQ Pioneer. Contact our team for product inquiries, support, or custom orders. Call 1-888-BBQ-FIRE or email hello@bbqpioneer.com"
@@ -68,7 +68,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <div className="fire-gradient py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="font-display text-4xl md:text-6xl text-white tracking-wider mb-4">
+          <h1 className="font-display text-4xl md:text-6xl text-gray-900 tracking-wider mb-4">
             GET IN TOUCH
           </h1>
           <p className="text-orange-100 text-lg max-w-2xl mx-auto">
@@ -86,15 +86,15 @@ export default function ContactPage() {
             return (
               <div
                 key={item.title}
-                className="bg-coal-900 border border-coal-700 rounded-xl p-6 hover:border-fire-600 transition-colors"
+                className="bg-white border border-gray-300 rounded-xl p-6 hover:border-fire-600 transition-colors"
               >
                 <div className="w-12 h-12 bg-fire-600/10 rounded-lg flex items-center justify-center mb-4">
                   <Icon className="text-fire-500" size={24} />
                 </div>
-                <h3 className="text-white font-semibold text-lg mb-2">
+                <h3 className="text-gray-900 font-semibold text-lg mb-2">
                   {item.title}
                 </h3>
-                <p className="text-coal-300 text-sm mb-3">{item.details}</p>
+                <p className="text-gray-600 text-sm mb-3">{item.details}</p>
                 {item.link && (
                   <a
                     href={item.link}
@@ -114,8 +114,8 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-coal-900 border border-coal-700 rounded-xl p-8">
-              <h2 className="font-display text-3xl text-white tracking-wider mb-6">
+            <div className="bg-white border border-gray-300 rounded-xl p-8">
+              <h2 className="font-display text-3xl text-gray-900 tracking-wider mb-6">
                 SEND US A MESSAGE
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -123,7 +123,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-semibold text-coal-300 mb-2"
+                      className="block text-sm font-semibold text-gray-600 mb-2"
                     >
                       Full Name *
                     </label>
@@ -134,14 +134,14 @@ export default function ContactPage() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-coal-800 border border-coal-700 rounded-lg text-white focus:outline-none focus:border-fire-500 transition-colors"
+                      className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-fire-500 transition-colors"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-semibold text-coal-300 mb-2"
+                      className="block text-sm font-semibold text-gray-600 mb-2"
                     >
                       Email Address *
                     </label>
@@ -152,7 +152,7 @@ export default function ContactPage() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-coal-800 border border-coal-700 rounded-lg text-white focus:outline-none focus:border-fire-500 transition-colors"
+                      className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-fire-500 transition-colors"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -162,7 +162,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-semibold text-coal-300 mb-2"
+                      className="block text-sm font-semibold text-gray-600 mb-2"
                     >
                       Phone Number
                     </label>
@@ -172,14 +172,14 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-coal-800 border border-coal-700 rounded-lg text-white focus:outline-none focus:border-fire-500 transition-colors"
+                      className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-fire-500 transition-colors"
                       placeholder="(555) 123-4567"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-sm font-semibold text-coal-300 mb-2"
+                      className="block text-sm font-semibold text-gray-600 mb-2"
                     >
                       Subject *
                     </label>
@@ -189,7 +189,7 @@ export default function ContactPage() {
                       required
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-coal-800 border border-coal-700 rounded-lg text-white focus:outline-none focus:border-fire-500 transition-colors"
+                      className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-fire-500 transition-colors"
                     >
                       <option value="">Select a subject</option>
                       <option value="product-inquiry">Product Inquiry</option>
@@ -207,7 +207,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-semibold text-coal-300 mb-2"
+                    className="block text-sm font-semibold text-gray-600 mb-2"
                   >
                     Message *
                   </label>
@@ -218,7 +218,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     rows="6"
-                    className="w-full px-4 py-3 bg-coal-800 border border-coal-700 rounded-lg text-white focus:outline-none focus:border-fire-500 transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-fire-500 transition-colors resize-none"
                     placeholder="Tell us how we can help you..."
                   />
                 </div>
@@ -226,7 +226,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={submitted}
-                  className="w-full fire-gradient text-white font-bold px-8 py-4 rounded-xl uppercase tracking-wider text-sm hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="w-full fire-gradient text-gray-900 font-bold px-8 py-4 rounded-xl uppercase tracking-wider text-sm hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   {submitted ? (
                     <>✓ Message Sent!</>
@@ -244,24 +244,24 @@ export default function ContactPage() {
           {/* Additional Info */}
           <div className="space-y-8">
             {/* FAQ Link */}
-            <div className="bg-coal-900 border border-coal-700 rounded-xl p-6">
-              <h3 className="font-display text-xl text-white tracking-wider mb-3">
+            <div className="bg-white border border-gray-300 rounded-xl p-6">
+              <h3 className="font-display text-xl text-gray-900 tracking-wider mb-3">
                 QUICK ANSWERS
               </h3>
-              <p className="text-coal-300 text-sm mb-4">
+              <p className="text-gray-600 text-sm mb-4">
                 Looking for immediate answers? Check out our frequently asked questions.
               </p>
               <a
                 href="/about#faq"
-                className="inline-block bg-coal-800 hover:bg-coal-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+                className="inline-block bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
               >
                 View FAQ
               </a>
             </div>
 
             {/* Support Resources */}
-            <div className="bg-coal-900 border border-coal-700 rounded-xl p-6">
-              <h3 className="font-display text-xl text-white tracking-wider mb-4">
+            <div className="bg-white border border-gray-300 rounded-xl p-6">
+              <h3 className="font-display text-xl text-gray-900 tracking-wider mb-4">
                 SUPPORT RESOURCES
               </h3>
               <ul className="space-y-3">
@@ -274,7 +274,7 @@ export default function ContactPage() {
                   <li key={item.label}>
                     <a
                       href={item.link}
-                      className="text-coal-300 hover:text-fire-500 transition-colors text-sm flex items-center gap-2"
+                      className="text-gray-600 hover:text-fire-500 transition-colors text-sm flex items-center gap-2"
                     >
                       <span className="text-fire-600">→</span>
                       {item.label}
@@ -286,7 +286,7 @@ export default function ContactPage() {
 
             {/* Emergency Support */}
             <div className="bg-fire-950 border border-fire-900 rounded-xl p-6">
-              <h3 className="font-display text-xl text-white tracking-wider mb-3">
+              <h3 className="font-display text-xl text-gray-900 tracking-wider mb-3">
                 NEED IMMEDIATE HELP?
               </h3>
               <p className="text-orange-200 text-sm mb-4">
@@ -294,7 +294,7 @@ export default function ContactPage() {
               </p>
               <a
                 href="tel:+18888882473"
-                className="block text-center fire-gradient text-white font-bold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity text-sm"
+                className="block text-center fire-gradient text-gray-900 font-bold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity text-sm"
               >
                 📞 1-888-BBQ-FIRE
               </a>

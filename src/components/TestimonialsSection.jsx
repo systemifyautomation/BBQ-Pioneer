@@ -73,14 +73,14 @@ export default function TestimonialsSection() {
   const t = testimonials[current];
 
   return (
-    <section className="py-20 bg-coal-800" aria-label="Customer testimonials">
+    <section className="py-20 bg-gray-100" aria-label="Customer testimonials">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-12">
           <span className="text-fire-500 text-sm font-bold uppercase tracking-widest">
             Real Pitmasters. Real Results.
           </span>
-          <h2 className="font-display text-4xl md:text-5xl text-white tracking-wider mt-2">
+          <h2 className="font-display text-4xl md:text-5xl text-gray-900 tracking-wider mt-2">
             WHAT OUR CUSTOMERS SAY
           </h2>
         </div>
@@ -88,7 +88,7 @@ export default function TestimonialsSection() {
         {/* Testimonial Card */}
         <div className="relative max-w-3xl mx-auto">
           <div
-            className={`bg-coal-700 rounded-3xl p-8 md:p-12 text-center transition-opacity duration-400 ${
+            className={`bg-gray-200 rounded-3xl p-8 md:p-12 text-center transition-opacity duration-400 ${
               isAnimating ? "opacity-0" : "opacity-100"
             }`}
           >
@@ -104,18 +104,18 @@ export default function TestimonialsSection() {
             </div>
 
             {/* Quote */}
-            <blockquote className="text-coal-100 text-lg md:text-xl leading-relaxed mb-8 italic">
+            <blockquote className="text-gray-800 text-lg md:text-xl leading-relaxed mb-8 italic">
               &ldquo;{t.text}&rdquo;
             </blockquote>
 
             {/* Reviewer info */}
             <div className="flex items-center justify-center gap-4">
-              <div className="w-12 h-12 rounded-full fire-gradient flex items-center justify-center font-bold text-white text-lg">
+              <div className="w-12 h-12 rounded-full fire-gradient flex items-center justify-center font-bold text-gray-900 text-lg">
                 {t.avatar}
               </div>
               <div className="text-left">
-                <p className="text-white font-semibold">{t.name}</p>
-                <p className="text-coal-400 text-sm">{t.location} · {t.date}</p>
+                <p className="text-gray-900 font-semibold">{t.name}</p>
+                <p className="text-gray-500 text-sm">{t.location} · {t.date}</p>
                 <p className="text-fire-500 text-xs font-medium mt-0.5">{t.product}</p>
               </div>
             </div>
@@ -124,14 +124,14 @@ export default function TestimonialsSection() {
           {/* Controls */}
           <button
             onClick={() => go(-1)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 w-10 h-10 rounded-full bg-coal-600 hover:bg-fire-600 text-white flex items-center justify-center transition-colors shadow-lg"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 w-10 h-10 rounded-full bg-gray-300 hover:bg-fire-600 text-gray-900 flex items-center justify-center transition-colors shadow-lg"
             aria-label="Previous testimonial"
           >
             <FiChevronLeft size={20} />
           </button>
           <button
             onClick={() => go(1)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 w-10 h-10 rounded-full bg-coal-600 hover:bg-fire-600 text-white flex items-center justify-center transition-colors shadow-lg"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 w-10 h-10 rounded-full bg-gray-300 hover:bg-fire-600 text-gray-900 flex items-center justify-center transition-colors shadow-lg"
             aria-label="Next testimonial"
           >
             <FiChevronRight size={20} />
@@ -144,7 +144,7 @@ export default function TestimonialsSection() {
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  i === current ? "bg-fire-600 w-6" : "bg-coal-600"
+                  i === current ? "bg-fire-600 w-6" : "bg-gray-300"
                 }`}
                 aria-label={`Go to testimonial ${i + 1}`}
               />
@@ -162,12 +162,12 @@ export default function TestimonialsSection() {
           ].map((s) => (
             <div
               key={s.sub}
-              className="text-center bg-coal-700 rounded-2xl p-6"
+              className="text-center bg-gray-200 rounded-2xl p-6"
             >
               <p className="font-display text-3xl text-fire-500 tracking-wider">
                 {s.val}
               </p>
-              <p className="text-coal-400 text-sm mt-1">{s.sub}</p>
+              <p className="text-gray-500 text-sm mt-1">{s.sub}</p>
             </div>
           ))}
         </div>

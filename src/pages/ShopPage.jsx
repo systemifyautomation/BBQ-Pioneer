@@ -88,18 +88,18 @@ export default function ShopPage() {
       />
 
       {/* Page Hero */}
-      <div className="bg-coal-800 border-b border-coal-700 py-12 px-4">
+      <div className="bg-gray-100 border-b border-gray-300 py-12 px-4">
         <div className="max-w-7xl mx-auto">
-          <h1 className="font-display text-4xl md:text-5xl text-white tracking-wider mb-2">
+          <h1 className="font-display text-4xl md:text-5xl text-gray-900 tracking-wider mb-2">
             SHOP {selectedCategory !== "all" ? selectedCategory.toUpperCase() + "S" : "ALL GRILLS"}
           </h1>
           {searchQuery && (
-            <p className="text-coal-400 text-sm">
+            <p className="text-gray-500 text-sm">
               Showing results for{" "}
               <span className="text-fire-500 font-semibold">"{searchQuery}"</span>
             </p>
           )}
-          <p className="text-coal-400 text-sm mt-1">
+          <p className="text-gray-500 text-sm mt-1">
             {filtered.length} product{filtered.length !== 1 ? "s" : ""} found
           </p>
         </div>
@@ -116,8 +116,8 @@ export default function ShopPage() {
                 onClick={() => setCategory(cat.id)}
                 className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
                   selectedCategory === cat.id
-                    ? "fire-gradient text-white"
-                    : "bg-coal-700 text-coal-300 hover:bg-coal-600 hover:text-white"
+                    ? "fire-gradient text-gray-900"
+                    : "bg-gray-200 text-gray-600 hover:bg-gray-300 hover:text-gray-900"
                 }`}
                 aria-pressed={selectedCategory === cat.id}
               >
@@ -128,7 +128,7 @@ export default function ShopPage() {
 
           {/* Mobile filter button */}
           <button
-            className="sm:hidden flex items-center gap-2 bg-coal-700 text-coal-300 hover:text-white px-4 py-2 rounded-full text-sm font-semibold transition-colors"
+            className="sm:hidden flex items-center gap-2 bg-gray-200 text-gray-600 hover:text-gray-900 px-4 py-2 rounded-full text-sm font-semibold transition-colors"
             onClick={() => setShowMobileFilter(true)}
           >
             <FiFilter size={15} />
@@ -139,7 +139,7 @@ export default function ShopPage() {
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value)}
-            className="bg-coal-700 border border-coal-600 text-white text-sm rounded-lg px-4 py-2 focus:outline-none focus:border-fire-600 transition-colors"
+            className="bg-gray-200 border border-gray-400 text-gray-900 text-sm rounded-lg px-4 py-2 focus:outline-none focus:border-fire-600 transition-colors"
             aria-label="Sort products"
           >
             {sortOptions.map((o) => (
@@ -152,12 +152,12 @@ export default function ShopPage() {
 
         {/* Mobile filter modal */}
         {showMobileFilter && (
-          <div className="fixed inset-0 z-50 bg-coal-900/95 p-6 flex flex-col">
+          <div className="fixed inset-0 z-50 bg-white/95 p-6 flex flex-col">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-white font-bold text-xl">Filter & Sort</h2>
+              <h2 className="text-gray-900 font-bold text-xl">Filter & Sort</h2>
               <button
                 onClick={() => setShowMobileFilter(false)}
-                className="text-coal-400 hover:text-white"
+                className="text-gray-500 hover:text-gray-900"
                 aria-label="Close filters"
               >
                 <FiX size={24} />
@@ -173,8 +173,8 @@ export default function ShopPage() {
                   }}
                   className={`w-full text-left px-5 py-3 rounded-xl font-semibold transition-all ${
                     selectedCategory === cat.id
-                      ? "fire-gradient text-white"
-                      : "bg-coal-700 text-coal-300"
+                      ? "fire-gradient text-gray-900"
+                      : "bg-gray-200 text-gray-600"
                   }`}
                 >
                   {cat.label}
@@ -187,10 +187,10 @@ export default function ShopPage() {
         {/* Results */}
         {filtered.length === 0 ? (
           <div className="text-center py-20">
-            <p className="text-coal-400 text-2xl font-display tracking-wider mb-4">
+            <p className="text-gray-500 text-2xl font-display tracking-wider mb-4">
               NO PRODUCTS FOUND
             </p>
-            <p className="text-coal-500 mb-6">
+            <p className="text-gray-400 mb-6">
               Try a different search or browse all categories.
             </p>
             <button
@@ -198,7 +198,7 @@ export default function ShopPage() {
                 setCategory("all");
                 setSearchParams({});
               }}
-              className="fire-gradient text-white font-bold px-6 py-3 rounded-xl uppercase tracking-wide text-sm hover:opacity-90 transition-opacity"
+              className="fire-gradient text-gray-900 font-bold px-6 py-3 rounded-xl uppercase tracking-wide text-sm hover:opacity-90 transition-opacity"
             >
               View All Grills
             </button>

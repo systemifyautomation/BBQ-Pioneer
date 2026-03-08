@@ -33,14 +33,14 @@ const categories = [
 
 export default function CategoryShowcase() {
   return (
-    <section className="py-20 bg-coal-800" aria-label="Shop by category">
+    <section className="py-20 bg-gray-100" aria-label="Shop by category">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <span className="text-fire-500 text-sm font-bold uppercase tracking-widest">
             Find Your Perfect Grill
           </span>
-          <h2 className="font-display text-4xl md:text-5xl text-white tracking-wider mt-2">
+          <h2 className="font-display text-4xl md:text-5xl text-gray-900 tracking-wider mt-2">
             SHOP BY CATEGORY
           </h2>
         </div>
@@ -62,7 +62,7 @@ export default function CategoryShowcase() {
                 loading="lazy"
               />
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-coal-900 via-coal-900/40 to-transparent group-hover:from-coal-900/90 transition-all duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent group-hover:from-gray-900/90 transition-all duration-300" />
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <p className="text-fire-400 text-xs font-semibold uppercase tracking-widest mb-1">
@@ -71,7 +71,7 @@ export default function CategoryShowcase() {
                 <h3 className="text-white font-display text-2xl tracking-wider mb-1">
                   {cat.label.toUpperCase()}
                 </h3>
-                <p className="text-coal-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {cat.description}
                 </p>
               </div>

@@ -3,10 +3,10 @@ import { FiShoppingCart, FiStar, FiEye } from "react-icons/fi";
 import { useCart } from "../context/CartContext";
 
 const badgeColors = {
-  fire: "bg-fire-600 text-white",
-  green: "bg-emerald-500 text-white",
-  blue: "bg-blue-500 text-white",
-  purple: "bg-purple-500 text-white",
+  fire: "bg-fire-600 text-gray-900",
+  green: "bg-emerald-500 text-gray-900",
+  blue: "bg-blue-500 text-gray-900",
+  purple: "bg-purple-500 text-gray-900",
 };
 
 function StarRating({ rating, count }) {
@@ -21,7 +21,7 @@ function StarRating({ rating, count }) {
           />
         ))}
       </div>
-      <span className="text-coal-400 text-xs">({count.toLocaleString()})</span>
+      <span className="text-gray-500 text-xs">({count.toLocaleString()})</span>
     </div>
   );
 }
@@ -34,9 +34,9 @@ export default function ProductCard({ product }) {
     : 0;
 
   return (
-    <article className="group bg-coal-800 rounded-2xl overflow-hidden hover-lift border border-coal-700 hover:border-fire-600/50 transition-all duration-300">
+    <article className="group bg-gray-100 rounded-2xl overflow-hidden hover-lift border border-gray-300 hover:border-fire-600/50 transition-all duration-300">
       {/* Image */}
-      <div className="relative overflow-hidden aspect-[4/3] bg-coal-700">
+      <div className="relative overflow-hidden aspect-[4/3] bg-gray-200">
         <Link to={`/product/${product.slug}`} aria-label={`View ${product.name}`}>
           <img
             src={product.images[0]}
@@ -47,10 +47,10 @@ export default function ProductCard({ product }) {
         </Link>
 
         {/* Overlay on hover */}
-        <div className="absolute inset-0 bg-coal-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <div className="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <Link
             to={`/product/${product.slug}`}
-            className="flex items-center gap-2 bg-white text-coal-900 font-semibold px-4 py-2 rounded-lg text-sm hover:bg-fire-500 hover:text-white transition-colors"
+            className="flex items-center gap-2 bg-white text-gray-900 font-semibold px-4 py-2 rounded-lg text-sm hover:bg-fire-500 hover:text-gray-900 transition-colors"
           >
             <FiEye size={15} />
             Quick View
@@ -69,7 +69,7 @@ export default function ProductCard({ product }) {
             </span>
           )}
           {discount > 0 && (
-            <span className="bg-coal-900/90 text-fire-500 text-xs font-bold px-2.5 py-1 rounded-full">
+            <span className="bg-white/90 text-fire-500 text-xs font-bold px-2.5 py-1 rounded-full">
               -{discount}%
             </span>
           )}
@@ -78,7 +78,7 @@ export default function ProductCard({ product }) {
         {/* Stock warning */}
         {product.stockCount <= 10 && (
           <div className="absolute bottom-3 left-3 right-3">
-            <p className="bg-coal-900/90 text-fire-400 text-xs font-semibold px-3 py-1.5 rounded-lg text-center">
+            <p className="bg-white/90 text-fire-400 text-xs font-semibold px-3 py-1.5 rounded-lg text-center">
               🔥 Only {product.stockCount} left in stock
             </p>
           </div>
@@ -92,7 +92,7 @@ export default function ProductCard({ product }) {
         </p>
         <Link
           to={`/product/${product.slug}`}
-          className="block font-bold text-white text-lg leading-tight mb-2 hover:text-fire-500 transition-colors line-clamp-2"
+          className="block font-bold text-gray-900 text-lg leading-tight mb-2 hover:text-fire-500 transition-colors line-clamp-2"
         >
           {product.name}
         </Link>
@@ -101,11 +101,11 @@ export default function ProductCard({ product }) {
 
         {/* Price */}
         <div className="flex items-center gap-3 mt-3 mb-4">
-          <span className="text-2xl font-extrabold text-white">
+          <span className="text-2xl font-extrabold text-gray-900">
             ${product.price.toLocaleString()}
           </span>
           {product.originalPrice && (
-            <span className="text-coal-500 line-through text-sm font-medium">
+            <span className="text-gray-400 line-through text-sm font-medium">
               ${product.originalPrice.toLocaleString()}
             </span>
           )}
@@ -116,7 +116,7 @@ export default function ProductCard({ product }) {
           <button
             onClick={() => addToCart(product)}
             disabled={!product.inStock}
-            className="flex-1 flex items-center justify-center gap-2 fire-gradient text-white font-bold py-2.5 px-4 rounded-xl text-sm uppercase tracking-wide hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 flex items-center justify-center gap-2 fire-gradient text-gray-900 font-bold py-2.5 px-4 rounded-xl text-sm uppercase tracking-wide hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label={`Add ${product.name} to cart`}
           >
             <FiShoppingCart size={15} />
@@ -124,7 +124,7 @@ export default function ProductCard({ product }) {
           </button>
           <Link
             to={`/product/${product.slug}`}
-            className="px-4 py-2.5 rounded-xl border border-coal-600 hover:border-fire-600 text-coal-300 hover:text-fire-500 transition-all text-sm font-semibold"
+            className="px-4 py-2.5 rounded-xl border border-gray-400 hover:border-fire-600 text-gray-600 hover:text-fire-500 transition-all text-sm font-semibold"
           >
             Details
           </Link>

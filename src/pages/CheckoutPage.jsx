@@ -73,44 +73,44 @@ export default function CheckoutPage() {
   };
 
   const inputClass = (field) =>
-    `w-full bg-coal-700 border ${
-      errors[field] ? "border-red-500" : "border-coal-600"
-    } text-white placeholder-coal-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-fire-600 transition-colors`;
+    `w-full bg-gray-200 border ${
+      errors[field] ? "border-red-500" : "border-gray-400"
+    } text-gray-900 placeholder-gray-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-fire-600 transition-colors`;
 
   if (step === 2) {
     return (
       <>
         <SEO title="Order Confirmed" description="Your order has been placed." canonical="/checkout" />
         <div className="min-h-screen flex items-center justify-center px-4">
-          <div className="max-w-lg w-full text-center bg-coal-800 rounded-3xl p-10 border border-coal-700">
+          <div className="max-w-lg w-full text-center bg-gray-100 rounded-3xl p-10 border border-gray-300">
             <div className="w-20 h-20 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-6">
               <FiCheck size={40} className="text-emerald-400" />
             </div>
-            <h1 className="font-display text-4xl text-white tracking-wider mb-3">
+            <h1 className="font-display text-4xl text-gray-900 tracking-wider mb-3">
               ORDER CONFIRMED!
             </h1>
-            <p className="text-coal-300 mb-2">
-              Thank you, <strong className="text-white">{form.firstName}</strong>! Your order has been
+            <p className="text-gray-600 mb-2">
+              Thank you, <strong className="text-gray-900">{form.firstName}</strong>! Your order has been
               placed successfully.
             </p>
-            <p className="text-coal-400 text-sm mb-8">
+            <p className="text-gray-500 text-sm mb-8">
               A confirmation email will be sent to{" "}
               <span className="text-fire-500">{form.email}</span>. Your grill will ship within 2–5
               business days.
             </p>
-            <div className="bg-coal-700 rounded-2xl p-5 mb-8 text-left">
+            <div className="bg-gray-200 rounded-2xl p-5 mb-8 text-left">
               <div className="flex justify-between text-sm mb-2">
-                <span className="text-coal-400">Estimated delivery</span>
-                <span className="text-white font-semibold">5–10 business days</span>
+                <span className="text-gray-500">Estimated delivery</span>
+                <span className="text-gray-900 font-semibold">5–10 business days</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-coal-400">Order total</span>
+                <span className="text-gray-500">Order total</span>
                 <span className="text-fire-500 font-bold">${total.toLocaleString()}</span>
               </div>
             </div>
             <Link
               to="/"
-              className="fire-gradient text-white font-bold px-8 py-4 rounded-xl uppercase tracking-wider text-sm hover:opacity-90 transition-opacity inline-block"
+              className="fire-gradient text-gray-900 font-bold px-8 py-4 rounded-xl uppercase tracking-wider text-sm hover:opacity-90 transition-opacity inline-block"
             >
               Continue Shopping
             </Link>
@@ -123,10 +123,10 @@ export default function CheckoutPage() {
   if (items.length === 0) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center px-4">
-        <p className="text-white font-display text-4xl tracking-wider mb-4">NOTHING TO CHECK OUT</p>
+        <p className="text-gray-900 font-display text-4xl tracking-wider mb-4">NOTHING TO CHECK OUT</p>
         <Link
           to="/shop"
-          className="fire-gradient text-white font-bold px-6 py-3 rounded-xl uppercase tracking-wide text-sm hover:opacity-90 transition-opacity"
+          className="fire-gradient text-gray-900 font-bold px-6 py-3 rounded-xl uppercase tracking-wide text-sm hover:opacity-90 transition-opacity"
         >
           Shop Grills
         </Link>
@@ -145,7 +145,7 @@ export default function CheckoutPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="flex items-center gap-3 mb-8">
           <img src="/flame.svg" alt="" className="w-7 h-7" />
-          <h1 className="font-display text-3xl text-white tracking-wider">SECURE CHECKOUT</h1>
+          <h1 className="font-display text-3xl text-gray-900 tracking-wider">SECURE CHECKOUT</h1>
           <FiLock size={16} className="text-fire-500 ml-1" />
         </div>
 
@@ -157,15 +157,15 @@ export default function CheckoutPage() {
             className="lg:col-span-3 space-y-8"
           >
             {/* Contact */}
-            <div className="bg-coal-800 rounded-2xl p-6 border border-coal-700">
-              <h2 className="font-display text-xl text-white tracking-wider mb-5">CONTACT INFO</h2>
+            <div className="bg-gray-100 rounded-2xl p-6 border border-gray-300">
+              <h2 className="font-display text-xl text-gray-900 tracking-wider mb-5">CONTACT INFO</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   { name: "firstName", label: "First Name", placeholder: "John" },
                   { name: "lastName", label: "Last Name", placeholder: "Smith" },
                 ].map((f) => (
                   <div key={f.name}>
-                    <label className="block text-coal-400 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                    <label className="block text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1.5">
                       {f.label}
                     </label>
                     <input
@@ -182,7 +182,7 @@ export default function CheckoutPage() {
                   </div>
                 ))}
                 <div>
-                  <label className="block text-coal-400 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                  <label className="block text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1.5">
                     Email
                   </label>
                   <input
@@ -196,7 +196,7 @@ export default function CheckoutPage() {
                   {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
                 </div>
                 <div>
-                  <label className="block text-coal-400 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                  <label className="block text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1.5">
                     Phone (optional)
                   </label>
                   <input
@@ -212,11 +212,11 @@ export default function CheckoutPage() {
             </div>
 
             {/* Shipping */}
-            <div className="bg-coal-800 rounded-2xl p-6 border border-coal-700">
-              <h2 className="font-display text-xl text-white tracking-wider mb-5">SHIPPING ADDRESS</h2>
+            <div className="bg-gray-100 rounded-2xl p-6 border border-gray-300">
+              <h2 className="font-display text-xl text-gray-900 tracking-wider mb-5">SHIPPING ADDRESS</h2>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-coal-400 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                  <label className="block text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1.5">
                     Street Address
                   </label>
                   <input
@@ -231,7 +231,7 @@ export default function CheckoutPage() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-coal-400 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                    <label className="block text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1.5">
                       City
                     </label>
                     <input
@@ -245,7 +245,7 @@ export default function CheckoutPage() {
                     {errors.city && <p className="text-red-400 text-xs mt-1">{errors.city}</p>}
                   </div>
                   <div>
-                    <label className="block text-coal-400 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                    <label className="block text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1.5">
                       State
                     </label>
                     <select
@@ -262,7 +262,7 @@ export default function CheckoutPage() {
                     {errors.state && <p className="text-red-400 text-xs mt-1">{errors.state}</p>}
                   </div>
                   <div>
-                    <label className="block text-coal-400 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                    <label className="block text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1.5">
                       ZIP Code
                     </label>
                     <input
@@ -281,14 +281,14 @@ export default function CheckoutPage() {
             </div>
 
             {/* Payment */}
-            <div className="bg-coal-800 rounded-2xl p-6 border border-coal-700">
-              <h2 className="font-display text-xl text-white tracking-wider mb-1">PAYMENT</h2>
-              <p className="text-coal-500 text-xs mb-5 flex items-center gap-1.5">
+            <div className="bg-gray-100 rounded-2xl p-6 border border-gray-300">
+              <h2 className="font-display text-xl text-gray-900 tracking-wider mb-1">PAYMENT</h2>
+              <p className="text-gray-400 text-xs mb-5 flex items-center gap-1.5">
                 <FiLock size={11} /> 256-bit SSL encrypted
               </p>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-coal-400 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                  <label className="block text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1.5">
                     Card Number
                   </label>
                   <input
@@ -305,7 +305,7 @@ export default function CheckoutPage() {
                   )}
                 </div>
                 <div>
-                  <label className="block text-coal-400 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                  <label className="block text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1.5">
                     Name on Card
                   </label>
                   <input
@@ -322,7 +322,7 @@ export default function CheckoutPage() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-coal-400 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                    <label className="block text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1.5">
                       Expiry
                     </label>
                     <input
@@ -339,7 +339,7 @@ export default function CheckoutPage() {
                     )}
                   </div>
                   <div>
-                    <label className="block text-coal-400 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                    <label className="block text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1.5">
                       CVV
                     </label>
                     <input
@@ -359,7 +359,7 @@ export default function CheckoutPage() {
 
             <button
               type="submit"
-              className="w-full fire-gradient text-white font-bold py-4 rounded-xl uppercase tracking-wider text-base hover:opacity-90 transition-opacity fire-glow"
+              className="w-full fire-gradient text-gray-900 font-bold py-4 rounded-xl uppercase tracking-wider text-base hover:opacity-90 transition-opacity fire-glow"
             >
               Place Order — ${total.toLocaleString()}
             </button>
@@ -367,8 +367,8 @@ export default function CheckoutPage() {
 
           {/* Order Summary Sidebar */}
           <div className="lg:col-span-2">
-            <div className="bg-coal-800 rounded-2xl p-6 border border-coal-700 sticky top-24">
-              <h2 className="font-display text-xl text-white tracking-wider mb-5">ORDER SUMMARY</h2>
+            <div className="bg-gray-100 rounded-2xl p-6 border border-gray-300 sticky top-24">
+              <h2 className="font-display text-xl text-gray-900 tracking-wider mb-5">ORDER SUMMARY</h2>
               <div className="space-y-3 mb-5">
                 {items.map((item) => (
                   <div key={item.id} className="flex gap-3 text-sm">
@@ -378,29 +378,29 @@ export default function CheckoutPage() {
                       className="w-14 h-12 object-cover rounded-lg flex-shrink-0"
                     />
                     <div className="flex-1 min-w-0">
-                      <p className="text-white font-semibold leading-tight line-clamp-2 mb-1">
+                      <p className="text-gray-900 font-semibold leading-tight line-clamp-2 mb-1">
                         {item.name}
                       </p>
-                      <p className="text-coal-400">Qty: {item.quantity}</p>
+                      <p className="text-gray-500">Qty: {item.quantity}</p>
                     </div>
-                    <p className="text-white font-bold flex-shrink-0">
+                    <p className="text-gray-900 font-bold flex-shrink-0">
                       ${(item.price * item.quantity).toLocaleString()}
                     </p>
                   </div>
                 ))}
               </div>
-              <div className="border-t border-coal-700 pt-4 space-y-2">
-                <div className="flex justify-between text-sm text-coal-400">
+              <div className="border-t border-gray-300 pt-4 space-y-2">
+                <div className="flex justify-between text-sm text-gray-500">
                   <span>Subtotal</span>
-                  <span className="text-white">${subtotal.toLocaleString()}</span>
+                  <span className="text-gray-900">${subtotal.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between text-sm text-coal-400">
+                <div className="flex justify-between text-sm text-gray-500">
                   <span>Shipping</span>
-                  <span className={shipping === 0 ? "text-emerald-400" : "text-white"}>
+                  <span className={shipping === 0 ? "text-emerald-400" : "text-gray-900"}>
                     {shipping === 0 ? "FREE" : `$${shipping}`}
                   </span>
                 </div>
-                <div className="flex justify-between font-bold text-white pt-2 border-t border-coal-700 text-lg">
+                <div className="flex justify-between font-bold text-gray-900 pt-2 border-t border-gray-300 text-lg">
                   <span>Total</span>
                   <span className="text-fire-500">${total.toLocaleString()}</span>
                 </div>

@@ -35,7 +35,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-coal-900 border-t border-coal-700" role="contentinfo">
+    <footer className="bg-gray-900 border-t border-gray-700" role="contentinfo">
       {/* Newsletter Band */}
       <div className="fire-gradient py-12 px-4">
         <div className="max-w-7xl mx-auto text-center">
@@ -57,7 +57,7 @@ export default function Footer() {
             />
             <button
               type="submit"
-              className="bg-coal-900 text-white font-bold px-6 py-3 rounded-lg hover:bg-coal-800 transition-colors text-sm uppercase tracking-wider"
+              className="bg-gray-900 text-white font-bold px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors text-sm uppercase tracking-wider"
             >
               Subscribe
             </button>
@@ -76,7 +76,7 @@ export default function Footer() {
                 BBQ PIONEER
               </span>
             </Link>
-            <p className="text-coal-400 text-sm leading-relaxed mb-6 max-w-xs">
+            <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
               Premium grills and smokers for those who refuse to settle. Every
               product built to last a lifetime and perform at championship level.
             </p>
@@ -91,7 +91,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 rounded-full bg-coal-700 flex items-center justify-center text-coal-300 hover:bg-fire-600 hover:text-white transition-all"
+                  className="w-9 h-9 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-fire-600 hover:text-white transition-all"
                 >
                   <Icon size={16} />
                 </a>
@@ -102,19 +102,19 @@ export default function Footer() {
             <div className="mt-6 space-y-2">
               <a
                 href={getPhoneLink()}
-                className="flex items-center gap-2 text-coal-400 hover:text-fire-500 transition-colors text-sm"
+                className="flex items-center gap-2 text-gray-400 hover:text-fire-500 transition-colors text-sm"
               >
                 <FiPhone size={14} />
                 {contactInfo.phone.display}
               </a>
               <a
                 href={getEmailLink('main')}
-                className="flex items-center gap-2 text-coal-400 hover:text-fire-500 transition-colors text-sm"
+                className="flex items-center gap-2 text-gray-400 hover:text-fire-500 transition-colors text-sm"
               >
                 <FiMail size={14} />
                 {contactInfo.email.main}
               </a>
-              <div className="flex items-center gap-2 text-coal-400 text-sm">
+              <div className="flex items-center gap-2 text-gray-400 text-sm">
                 <FiMapPin size={14} />
                 {getShortAddress()}
               </div>
@@ -124,7 +124,7 @@ export default function Footer() {
           {/* Nav columns */}
           {Object.entries(footerLinks).map(([section, links]) => (
             <div key={section}>
-              <h3 className="text-white font-semibold uppercase tracking-wider text-xs mb-4 border-b border-coal-700 pb-2">
+              <h3 className="text-white font-semibold uppercase tracking-wider text-xs mb-4 border-b border-gray-700 pb-2">
                 {section}
               </h3>
               <ul className="space-y-2">
@@ -132,7 +132,7 @@ export default function Footer() {
                   <li key={link.to}>
                     <Link
                       to={link.to}
-                      className="text-coal-400 hover:text-fire-500 transition-colors text-sm"
+                      className="text-gray-400 hover:text-fire-500 transition-colors text-sm"
                     >
                       {link.label}
                     </Link>
@@ -145,19 +145,19 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-coal-700 py-6 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-coal-500">
+      <div className="border-t border-gray-700 py-6 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-500">
           <p>
             © {new Date().getFullYear()} BBQ Pioneer LLC. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <Link to="/privacy-policy" className="hover:text-coal-300 transition-colors">
+            <Link to="/privacy-policy" className="hover:text-gray-300 transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms-of-service" className="hover:text-coal-300 transition-colors">
+            <Link to="/terms-of-service" className="hover:text-gray-300 transition-colors">
               Terms of Service
             </Link>
-            <Link to="/contact" className="hover:text-coal-300 transition-colors">
+            <Link to="/contact" className="hover:text-gray-300 transition-colors">
               Contact
             </Link>
           </div>
