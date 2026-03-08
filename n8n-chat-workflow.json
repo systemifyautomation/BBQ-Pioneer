@@ -1,0 +1,192 @@
+{
+  "name": "BBQ Pioneer Live Chat",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "live-chat",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "bbq-pioneer-chat"
+    },
+    {
+      "parameters": {
+        "functionCode": "// Extract and format chat data\nconst sessionId = $json.sessionId;\nconst eventType = $json.eventType;\nconst message = $json.message;\nconst userName = $json.userName || 'Anonymous';\nconst userEmail = $json.userEmail || 'no-email@provided.com';\nconst timestamp = $json.timestamp;\nconst url = $json.url || 'Unknown';\nconst userAgent = $json.userAgent || 'Unknown';\n\nconst formattedTime = new Date(timestamp).toLocaleString('en-US', {\n  timeZone: 'America/Denver',\n  dateStyle: 'medium',\n  timeStyle: 'short'\n});\n\nreturn {\n  json: {\n    sessionId,\n    eventType,\n    message,\n    userName,\n    userEmail,\n    timestamp,\n    url,\n    userAgent,\n    formattedTime,\n    isNewChat: eventType === 'chat_started',\n    isClosed: eventType === 'chat_closed'\n  }\n};"
+      },
+      "name": "Parse Chat Data",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal",
+              "value1": "={{$json.eventType}}",
+              "value2": "chat_started"
+            },
+            {
+              "operation": "equal",
+              "value1": "={{$json.eventType}}",
+              "value2": "message"
+            },
+            {
+              "operation": "equal",
+              "value1": "={{$json.eventType}}",
+              "value2": "chat_closed"
+            }
+          ]
+        }
+      },
+      "name": "Route by Event",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@bbqpioneer.com",
+        "toEmail": "support@bbqpioneer.com",
+        "subject": "🔥 New Chat Started - BBQ Pioneer",
+        "emailType": "html",
+        "message": "<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; }\n    .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n    .header { background: linear-gradient(135deg, #ff6b00 0%, #ff4500 50%, #ff8c00 100%); color: white; padding: 20px; border-radius: 8px 8px 0 0; }\n    .content { background: #f5f5f5; padding: 20px; border-radius: 0 0 8px 8px; }\n    .info { background: white; padding: 15px; margin: 10px 0; border-left: 4px solid #ff6b00; }\n    .footer { text-align: center; margin-top: 20px; color: #666; font-size: 12px; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h2>🔥 New Chat Session Started</h2>\n    </div>\n    <div class=\"content\">\n      <div class=\"info\">\n        <p><strong>Customer Name:</strong> {{$json.userName}}</p>\n        <p><strong>Email:</strong> {{$json.userEmail}}</p>\n        <p><strong>Time:</strong> {{$json.formattedTime}}</p>\n        <p><strong>Page:</strong> <a href=\"{{$json.url}}\">{{$json.url}}</a></p>\n        <p><strong>Session ID:</strong> {{$json.sessionId}}</p>\n      </div>\n      <p><strong>First Message:</strong></p>\n      <blockquote style=\"background: white; padding: 15px; border-left: 4px solid #ff6b00; margin: 10px 0;\">\n        {{$json.message}}\n      </blockquote>\n    </div>\n    <div class=\"footer\">\n      <p>BBQ Pioneer Live Chat System</p>\n    </div>\n  </div>\n</body>\n</html>"
+      },
+      "name": "Email - New Chat",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [850, 200]
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@bbqpioneer.com",
+        "toEmail": "support@bbqpioneer.com",
+        "subject": "💬 {{$json.userName}} sent a message",
+        "emailType": "html",
+        "message": "<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; }\n    .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n    .header { background: linear-gradient(135deg, #ff6b00 0%, #ff4500 50%, #ff8c00 100%); color: white; padding: 15px; border-radius: 8px 8px 0 0; }\n    .message { background: #f5f5f5; padding: 20px; border-radius: 0 0 8px 8px; }\n    .msg-box { background: white; padding: 15px; margin: 10px 0; border-left: 4px solid #ff6b00; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h3>💬 New Chat Message</h3>\n    </div>\n    <div class=\"message\">\n      <p><strong>From:</strong> {{$json.userName}} ({{$json.userEmail}})</p>\n      <p><strong>Time:</strong> {{$json.formattedTime}}</p>\n      <div class=\"msg-box\">\n        {{$json.message}}\n      </div>\n      <p style=\"font-size: 12px; color: #666; margin-top: 15px;\">Session: {{$json.sessionId}}</p>\n    </div>\n  </div>\n</body>\n</html>"
+      },
+      "name": "Email - Message",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@bbqpioneer.com",
+        "toEmail": "support@bbqpioneer.com",
+        "subject": "Chat Closed - {{$json.userName}}",
+        "message": "Chat session closed.\n\nCustomer: {{$json.userName}} ({{$json.userEmail}})\nSession ID: {{$json.sessionId}}\nTime: {{$json.formattedTime}}"
+      },
+      "name": "Email - Chat Closed",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [850, 400]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  \"status\": \"success\",\n  \"reply\": \"Thanks for your message! Our team will respond shortly. 🔥\",\n  \"sessionId\": $json.sessionId,\n  \"timestamp\": new Date().toISOString()\n} }}"
+      },
+      "name": "Respond to Client",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1050, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Parse Chat Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Chat Data": {
+      "main": [
+        [
+          {
+            "node": "Route by Event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by Event": {
+      "main": [
+        [
+          {
+            "node": "Email - New Chat",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Email - Message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Email - Chat Closed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email - New Chat": {
+      "main": [
+        [
+          {
+            "node": "Respond to Client",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email - Message": {
+      "main": [
+        [
+          {
+            "node": "Respond to Client",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email - Chat Closed": {
+      "main": [
+        [
+          {
+            "node": "Respond to Client",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "1.0",
+  "id": "bbq-pioneer-live-chat",
+  "meta": {
+    "instanceId": "bbq-pioneer"
+  },
+  "tags": []
+}

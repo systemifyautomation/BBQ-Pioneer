@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow internal/utility paths
+Disallow: /cart
+Disallow: /checkout
+
+# Sitemaps
+Sitemap: https://bbqpioneer.com/sitemap.xml
